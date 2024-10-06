@@ -7,6 +7,9 @@ import {
   TouchableWithoutFeedback,
   TouchableOpacity,
   TouchableHighlight,
+  SafeAreaView,
+  Button,
+  Alert,
 } from "react-native";
 
 export default function App() {
@@ -14,22 +17,17 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your application!</Text>
-      <TouchableHighlight
+      <Button
+        color="red"
+        title={"Click me"}
         onPress={() => {
-          console.log("Image Tapped");
+          Alert.alert("My title", "message", [
+            { text: "yes", onPress: () => console.log("yes pressed") },
+            { text: "No", onPress: () => console.log("no pressed") },
+          ]);
         }}
-      >
-        <Image
-          blurRadius={2}
-          fadeDuration={1000}
-          source={{
-            width: 200,
-            height: 300,
-            uri: "https://picsum.photos/200/300",
-          }}
-        />
-      </TouchableHighlight>
+      />
+
       <StatusBar style="auto" />
     </View>
   );
