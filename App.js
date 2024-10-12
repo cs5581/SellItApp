@@ -17,27 +17,24 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Button
-        color="red"
-        title={"Click me"}
-        onPress={() => {
-          Alert.alert("My title", "message", [
-            { text: "yes", onPress: () => console.log("yes pressed") },
-            { text: "No", onPress: () => console.log("no pressed") },
-          ]);
-        }}
-      />
-
-      <StatusBar style="auto" />
+      <View style={styles.innerContainer}></View>
+      <View
+        style={[styles.innerContainer, { backgroundColor: "gold", flex: 2 }]}
+      ></View>
+      <View
+        style={[styles.innerContainer, { backgroundColor: "silver" }]}
+      ></View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "dodgerblue",
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+  },
+  innerContainer: {
+    backgroundColor: "red",
+    flex: 1,
   },
 });
